@@ -18,6 +18,7 @@
 		228D477019F5DAFF00DE9903 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D476F19F5DAFF00DE9903 /* LocationsViewController.swift */; };
 		22BB9BD519F5DD21000048C2 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB9BD419F5DD21000048C2 /* LocationCell.swift */; };
 		6A6D7BF52170F2AB0076C7A6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6D7BF42170F2AB0076C7A6 /* MapKit.framework */; };
+		6AC9F17521743688003D65EE /* PhotoAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC9F17421743688003D65EE /* PhotoAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		22BB9BD419F5DD21000048C2 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		3BC03228ADDB2B1C51BBE1F5 /* Pods_Photo_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photo_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6D7BF42170F2AB0076C7A6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6AC9F17421743688003D65EE /* PhotoAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAnnotation.swift; sourceTree = "<group>"; };
 		BA18FD238D262A2089803FDF /* Pods-Photo Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Map.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Map/Pods-Photo Map.release.xcconfig"; sourceTree = "<group>"; };
 		E33F18E3186E54489F470849 /* Pods-Photo Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Map.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Map/Pods-Photo Map.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +105,7 @@
 				228D475719F5DA9F00DE9903 /* LaunchScreen.xib */,
 				228D474C19F5DA9F00DE9903 /* Supporting Files */,
 				2258D28219F5E60100F013CE /* Photo Map-Bridging-Header.h */,
+				6AC9F17421743688003D65EE /* PhotoAnnotation.swift */,
 			);
 			path = "Photo Map";
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				228D474F19F5DA9F00DE9903 /* AppDelegate.swift in Sources */,
 				11D16EF31BD08AAE00B6CBFE /* PhotoMapViewController.swift in Sources */,
 				228D477019F5DAFF00DE9903 /* LocationsViewController.swift in Sources */,
+				6AC9F17521743688003D65EE /* PhotoAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

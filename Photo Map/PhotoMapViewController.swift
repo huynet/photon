@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocationsViewControllerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     var picture: UIImage!
@@ -33,6 +33,31 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
         picture = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         dismiss(animated: true, completion: {self.performSegue(withIdentifier: "tagSegue", sender: nil)})
+    }
+    
+    func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber) {
+        self.navigationController?.popViewController(animated: true)
+        let locationCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = locationCoordinate
+        annotation.title = "cisco"
+        mapView.addAnnotation(annotation)
+    }
+    
+    func mapView(mapview: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseID = "myAnnotationView"
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
+        if (annotation == nil) {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+            annotationView!.canShowCallout = true
+            annotationView!.leftCalloutAccessoryView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        }
+        let imageView = annotationView?.leftCalloutAccessoryView as! UIImageView
+        imageView.image = UIImage(named: "camera")
+        
+        return annotationView
     }
     
     override func viewDidLoad() {
@@ -75,9 +100,10 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
         if segue.identifier == "tagSegue" {
             let locationsViewController = segue.destination as! LocationsViewController
-            locationsViewController.delegate =  self
+            locationsViewController.delegate = self
         }
     }
 }
